@@ -8,7 +8,6 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "@actual-app/web": "link:/home/leandro-menezes/opensource/actual-repos/actual/packages/desktop-client",
     "@types/node": "^22.10.2",
     "@types/react": "^18.2.0",
     "@types/react-redux": "^7.1.34",

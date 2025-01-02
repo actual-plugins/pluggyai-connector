@@ -2,9 +2,8 @@ import type { ActualPlugin, ActualPluginEntry } from 'plugins-shared';
 import manifest from './manifest';
 import { GeneratePluggyAiModal } from './PluggyAiModal';
 
-const pluginEntry: ActualPluginEntry = ({React, toolKit}) => {
+const pluginEntry: ActualPluginEntry = ({React}) => {
     const PluggyAiModal = GeneratePluggyAiModal(React);
-    const dispatch = toolKit.useDispatch();
 
     const plugin: ActualPlugin = {
         name: manifest.name,
@@ -15,11 +14,6 @@ const pluginEntry: ActualPluginEntry = ({React, toolKit}) => {
             onMethod: {
                 ConnectorsNames: () => ['Pluggy.AI'],
                 ConnectorOnSetup: () => { 
-                    dispatch(
-                        toolKit.pushModal('plugin-pluggyai-init', {
-                          onSuccess: () => {},
-                        }),
-                      )
                 },
                 ModalList: () => new Map([['plugin-pluggyai-init', <PluggyAiModal />]])
             },

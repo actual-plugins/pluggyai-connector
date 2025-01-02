@@ -5,12 +5,6 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"@actual-app/web@link:/home/leandro-menezes/opensource/actual-repos/actual/packages/desktop-client::locator=actual-plugin-example%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@actual-app/web@link:/home/leandro-menezes/opensource/actual-repos/actual/packages/desktop-client::locator=actual-plugin-example%40workspace%3A."
-  languageName: node
-  linkType: soft
-
 "@babel/runtime@npm:^7.9.2":
   version: 7.26.0
   resolution: "@babel/runtime@npm:7.26.0"
@@ -450,7 +444,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "actual-plugin-example@workspace:."
   dependencies:
-    "@actual-app/web": "link:/home/leandro-menezes/opensource/actual-repos/actual/packages/desktop-client"
     "@types/node": "npm:^22.10.2"
     "@types/react": "npm:^18.2.0"
     "@types/react-redux": "npm:^7.1.34"

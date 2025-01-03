@@ -1,12 +1,15 @@
-type PluggyAiModalProps = {
+import { ActualPluginToolkit } from "plugins-shared";
 
-}
+export const GeneratePluggyAiModal = (React, toolKit: ActualPluginToolkit) => {
+  const PluggyAiModal = () => (
+    <toolKit.commonComponents.Modal
+      props={{
+        name: "hi",
+      }}
+    >
+      <div>Hello World</div>
+    </toolKit.commonComponents.Modal>
+  );
 
-export const GeneratePluggyAiModal = (React) => {
-    const PluggyAiModal = (props: PluggyAiModalProps) => (
-        <div></div>
-    );
-  
-    return PluggyAiModal;
-}
-  
+  return PluggyAiModal;
+};

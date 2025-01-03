@@ -12,8 +12,10 @@ const pluginEntry: ActualPluginEntry = ({ React, toolKit }) => {
     hooks: {
       onMethod: {
         ConnectorsNames: () => ["Pluggy.AI"],
-        ConnectorOnSetup: () => {},
-        ModalList: () => new Map([["plugin-pluggyai-init", <PluggyAiModal />]]),
+        ConnectorOnSetup: () => {
+          toolKit.functions.pushModal("pluggyai-init");
+        },
+        ModalList: () => new Map([["pluggyai-init", <PluggyAiModal />]]),
       },
     },
   };

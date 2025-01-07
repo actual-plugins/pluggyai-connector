@@ -8,6 +8,7 @@ import manifest from "./src/manifest";
 
 export default defineConfig({
   build: {
+    minify: false,
     lib: {
       entry: path.resolve(
         path.dirname(fileURLToPath(import.meta.url)),
@@ -16,15 +17,6 @@ export default defineConfig({
       name: "Shared",
       formats: ["es"],
       fileName: (format) => `index.${format}.js`,
-    },
-    rollupOptions: {
-      external: ["react", "react-dom", "react-aria", "react-aria-components"],
-      output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-        },
-      },
     },
   },
   plugins: [

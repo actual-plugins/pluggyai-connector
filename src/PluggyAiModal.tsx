@@ -1,14 +1,15 @@
-import { ActualPluginToolkit } from "plugins-shared";
+import React from 'react';
+import { ActualPluginToolkit, Button, View } from "plugins-shared";
 
-export const GeneratePluggyAiModal = (React, toolKit: ActualPluginToolkit) => {
+export const GeneratePluggyAiModal = (toolKit: ActualPluginToolkit) => {
   const PluggyAiModal = () => (
     <toolKit.commonComponents.Modal
       name='pluggyai-init'
     >
-      <div>Hello World</div>
-      <toolKit.commonComponents.Button variant="primary">
+      <View>Test</View>
+      <Button variant="primary">
         Testing
-      </toolKit.commonComponents.Button>
+      </Button>
     </toolKit.commonComponents.Modal>
   );
 

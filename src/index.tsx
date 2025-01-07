@@ -1,9 +1,10 @@
-import type { ActualPlugin, ActualPluginEntry } from "plugins-shared";
+import React from 'react';
+import { Button, initializePlugin, View, type ActualPlugin, type ActualPluginEntry } from "plugins-shared";
 import manifest from "./manifest";
 import { GeneratePluggyAiModal } from "./PluggyAiModal";
 
-const pluginEntry: ActualPluginEntry = ({ React, toolKit }) => {
-  const PluggyAiModal = GeneratePluggyAiModal(React, toolKit);
+const pluginEntry: ActualPluginEntry = ({ toolKit }) => {
+  const PluggyAiModal = GeneratePluggyAiModal(toolKit);
 
   const plugin: ActualPlugin = {
     name: manifest.name,
@@ -17,9 +18,12 @@ const pluginEntry: ActualPluginEntry = ({ React, toolKit }) => {
         },
         ModalList: () => new Map([["pluggyai-init", <PluggyAiModal />]]),
       },
+      components: {
+        ComponentTest: () => <View>test</View>
+      }
     },
   };
 
-  return plugin;
+  return initializePlugin(plugin);
 };
 export default pluginEntry;
